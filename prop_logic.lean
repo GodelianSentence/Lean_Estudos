@@ -12,7 +12,6 @@ example : p ∧ q ↔ q ∧ p := by
     have hp := h.right
     have hq := h.left
     exact And.intro hp hq
-
 example : p ∨ q ↔ q ∨ p := by
   apply Iff.intro
   . intro h
@@ -39,7 +38,6 @@ example : (p ∧ q) ∧ r ↔ p ∧ (q ∧ r) := by
     have hp := h.left
     have hqr := h.right
     exact And.intro (And.intro hp (hqr.left)) hqr.right
-
 example : (p ∨ q) ∨ r ↔ p ∨ (q ∨ r) := by
   apply Iff.intro
   . intro h
@@ -158,7 +156,6 @@ example : ¬(p ∨ q) ↔ ¬p ∧ ¬q := by
         exact absurd hq hnq
     . intro hnpq
       exact hnpq
-
 example : ¬p ∨ ¬q → ¬(p ∧ q) := by
   . intro h
     apply Or.elim (em (p ∧ q))
@@ -172,7 +169,6 @@ example : ¬p ∨ ¬q → ¬(p ∧ q) := by
         exact absurd hq hnq
     . intro hnpq
       exact hnpq
-
 example : ¬(p ∧ ¬p) := by
   apply Or.elim (em (p ∧ ¬p))
   . intro hpnp
